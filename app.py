@@ -1,4 +1,4 @@
-from msilib.schema import InstallUISequence
+#from msilib.schema import InstallUISequence
 import streamlit as st
 import pickle
 from streamlit_option_menu import option_menu
