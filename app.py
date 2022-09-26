@@ -1,4 +1,4 @@
-#from msilib.schema import InstallUISequence
+
 import streamlit as st
 import pickle
 from streamlit_option_menu import option_menu
@@ -8,7 +8,7 @@ from PIL import Image, ImageOps
 import numpy as np
 
 
-def teachable_machine_classification(img, weights_file):
+def func(img, weights_file):
     # Load the model
     model = keras.models.load_model(weights_file)
 
@@ -61,7 +61,7 @@ if(selected=='Disease Detection'):
             st.image(image, caption='Uploaded Scan.', use_column_width=True)
             st.write("")
             
-            label = teachable_machine_classification(image, 'breast_cancer.h5')
+            label = func(image, 'breast_cancer.h5')
             
             if label == 0:
                 st.success("The scan is normal")
@@ -79,13 +79,13 @@ if(selected=='Disease Detection'):
         st.text("Upload an MRI scan for Detection")
 
 
-        uploaded_file = st.file_uploader("Choose a scan ...", type=["png","jpg","jpeg"])
+        uploaded_file = st.file_uploader("Choose a scan ...", type=["jpg","jpeg"])
         if uploaded_file is not None:
             image = Image.open(uploaded_file)
             st.image(image, caption='Uploaded Scan.', use_column_width=True)
             st.write("")
             
-            label = teachable_machine_classification(image, 'brain_tumor.h5')
+            label = func(image, 'brain_tumor.h5')
             
             if label == 0:
                 st.success("The scan is normal")
