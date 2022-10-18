@@ -1,2 +1,2 @@
 # mdmd
-disease detection & prevention
+disease detection & prediction
