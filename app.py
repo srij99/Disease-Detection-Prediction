@@ -105,7 +105,7 @@ if(selected=='Disease Prediction'):
     aaa=st.sidebar.selectbox("Select a Disease",("Diabetes","Heart Disease"))
     if(aaa=="Diabetes"):
         st.title("Diabetes Prediction")
-        Pregnancies = st.number_input('Number of pregnancies',step=1)
+        Pregnancies = st.number_input('Number of pregnancies',step=1,min_value=0)
         Glucose = st.slider('Glucose Level',step=1,min_value=0,max_value=200)
         BloodPressure = st.slider('Blood Pressure Value',min_value=0,max_value=130,step=1)
         SkinThickness = st.slider('Skin Thickness Value ',min_value=0,max_value=100,step=1)
